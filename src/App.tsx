@@ -61,17 +61,20 @@ function App() {
     }
   
   return (
-    <div className="APP bg-red-500">
-     <input type="text"  ref={ref} />
-     <button onClick={addhandler}>Add</button>
-     {
-      todos.map(todo=>
-        <div key={todo.id}>
-          {todo.text}
-          <button onClick={()=>deletehandler(todo.id)}>Delete</button>
-        </div>
-        )
-     }
+    <div className="m-auto container w-1/4 bg-cyan-300">
+
+     <div className="shadow-lg container">
+      <input className=' bg-white border border-slate-300 rounded-md py-2 my-2 ml-2 pl-9 pr-3 shadow-sm placeholder="Search for anything...'  ref={ref} />
+      <button onClick={addhandler}>Add</button>
+      {
+        todos.map(todo=>
+          <div key={todo.id}>
+            {todo.text}
+            <button onClick={()=>deletehandler(todo.id)}>Delete</button>
+          </div>
+          )
+      }
+      </div>
 
 
     </div>
