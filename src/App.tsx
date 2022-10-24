@@ -61,16 +61,16 @@ function App() {
     }
   
   return (
-    <div className="m-auto container w-1/4 bg-cyan-300">
+    <div className="m-auto container w-1/4 bg-cyan-300 my-5">
 
      <div className="shadow-lg container">
       <input className=' bg-white border border-slate-300 rounded-md py-2 my-2 ml-2 pl-9 pr-3 shadow-sm placeholder="Search for anything...'  ref={ref} />
-      <button onClick={addhandler}>Add</button>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded ml-2" onClick={addhandler}>Add</button>
       {
         todos.map(todo=>
-          <div key={todo.id}>
+          <div className='ml-2' key={todo.id}>
             {todo.text}
-            <button onClick={()=>deletehandler(todo.id)}>Delete</button>
+            <button className='bg-red-500 mt-2 ml-2 text-white' onClick={()=>deletehandler(todo.id)}>Delete</button>
           </div>
           )
       }
